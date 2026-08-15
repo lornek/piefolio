@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Motion portfolio of Alex Mercer, director and editor." />
+    <title>Alex Mercer — Motion Director</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .project .in-place-video{position:absolute;inset:0;width:100%;height:100%;z-index:3;object-fit:contain;background:#000}
+      .mux-poster{background-color:#000!important;background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important}
+      .mux-poster>i,.mux-poster>b,.mux-poster>strong,.mux-poster:before{display:none!important}
+      .photo-album{background:#050609}.photo-thumb{position:absolute;inset:0;background:center 20%/42% auto no-repeat;filter:saturate(.86) contrast(1.06)}.photo-thumb.photo-a{animation:album-image-a 24s linear infinite}.photo-thumb.photo-b{opacity:0;animation:album-image-b 24s linear infinite}.photo-scan{position:absolute;inset:0;background:no-repeat;opacity:0;filter:saturate(.86) contrast(1.06)}.photo-scan.photo-a{animation:photo-cuts-a 24s linear infinite}.photo-scan.photo-b{animation:photo-cuts-b 24s linear infinite}
+      .project-grid .photo-album{grid-column:span 2;height:min(65vw,730px)}
+      .hero{min-height:0;padding:118px 4.5vw 24px;background:#07090d;border-bottom:1px solid var(--line)}
+      .hero:before,.hero:after{display:none}.work{padding-top:48px}
+      .photo-album:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#030509a8 0%,transparent 58%);z-index:2;pointer-events:none}
+      @keyframes album-image-a{0%{opacity:1;background-position:center 20%}49.9%{opacity:1;background-position:center 80%}50%,100%{opacity:0;background-position:center 20%}}@keyframes album-image-b{0%,49.9%{opacity:0;background-position:center 20%}50%{opacity:1;background-position:center 20%}99.9%{opacity:1;background-position:center 80%}100%{opacity:0;background-position:center 20%}}@keyframes photo-cuts-a{0%,12.4%{opacity:0}12.5%{opacity:1;background-size:140%;background-position:center 60%}24.9%{opacity:1;background-size:150%;background-position:center 61%}25%,37.4%{opacity:0}37.5%{opacity:1;background-size:140%;background-position:center 87%}49.9%{opacity:1;background-size:150%;background-position:center 88%}50%,100%{opacity:0}}@keyframes photo-cuts-b{0%,62.4%{opacity:0}62.5%{opacity:1;background-size:120%;background-position:center 60%}74.9%{opacity:1;background-size:125%;background-position:center 61%}75%,87.4%{opacity:0}87.5%{opacity:1;background-size:120%;background-position:center 87%}99.9%{opacity:1;background-size:125%;background-position:center 88%}100%{opacity:0}}
+      .project .project-copy{z-index:4;pointer-events:none}
+      .project .play{z-index:5}.project .play.is-playing{background:#05070aa3;border-color:#ffffff70}
+      .video-mute{position:absolute;z-index:5;top:101px;right:25px;width:52px;height:52px;border:1px solid #ffffff70;border-radius:50%;background:#05070aa3;color:#fff;backdrop-filter:blur(8px);font-size:17px;cursor:pointer;transition:.25s}.play.small~.video-mute{top:87px}.video-mute:hover{background:var(--acid);border-color:var(--acid)}
+      .global-mute{border:1px solid #ffffff55;border-radius:999px;background:#05070a66;color:inherit;padding:8px 12px;font:500 10px 'DM Mono';letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.global-mute:hover{border-color:var(--acid);color:var(--acid)}
+      .nav-actions{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+      .expand{position:absolute;z-index:5;right:25px;bottom:25px;width:52px;height:52px;border:1px solid #ffffff70;border-radius:50%;background:#05070aa3;color:#fff;backdrop-filter:blur(8px);font-size:20px;cursor:pointer;transition:.25s}
+      .expand:hover{background:var(--acid);border-color:var(--acid)}
+      #player{width:100vw;height:100vh;max-height:none;border:0;background:#000}
+      #player video{width:100vw;height:100vh;max-height:none;object-fit:contain}
+      #player .close{top:22px;right:24px;width:44px;height:44px;background:#07090dbb;font-size:30px}
+      @media(max-width:650px){.hero{padding:92px 6vw 22px}.work{padding-top:36px}.project-grid .photo-album{grid-column:auto;height:112vw}.video-mute{top:93px;right:17px;width:46px;height:46px}.play.small~.video-mute{top:79px}.expand{right:17px;bottom:17px;width:46px;height:46px}.global-mute{display:none}}
+    </style>
+  </head>
+  <body>
+    <header class="nav"><a class="brand" href="#top">AM<span>®</span></a><div class="nav-actions"><nav><a href="#work">Selected work</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="global-mute" id="global-mute" type="button" aria-pressed="false">Sound on</button></div><button class="menu" aria-label="Open navigation">Menu</button></header>
+    <main id="top">
+      <section class="hero">
+        <div class="eyebrow">VFX Supervisor &amp; Developer <span>•</span> Toronto / Everywhere</div>
+      </section>
+
+      <section id="work" class="work">
+        <div class="section-head"><p class="eyebrow">01 / Selected work</p><p class="count">06 projects</p></div>
+        <div class="feature project reveal">
+          <button class="play" data-playback-ids="02Lfw3IIR4ZQvo8U6BzEdFMhdAw6Yu702p00PcQzn3eMYo,VrhgG9VOBrw0102qwMIvgiz3OgMztkJzytFSSD01rZ5fgU,otkvN7NglQdp9MBO2e3Lvk2JCAPA1JKBqfg4VtjyMBg" data-audio-playback-id="AMPBrlz7IBZmNGcqJ55Z73yfbYuB9T4DQ6E02kJNX9ag" aria-label="Play Black Beads reel"><span>▶</span></button>
+          <div class="project-copy"><p class="tag">Motion Design | 2020</p><h2>Automation</h2><p class="client">Houdini | RedShift | Nuke</p></div>
+          <div class="scene scene-one mux-poster" style="background-image:url('https://image.mux.com/02Lfw3IIR4ZQvo8U6BzEdFMhdAw6Yu702p00PcQzn3eMYo/thumbnail.webp?width=1920&height=1080&fit_mode=pad')"><i></i><b></b><strong></strong></div>
+        </div>
+        <div class="project-grid">
+          <article class="project photo-album reveal"><div class="photo-thumb photo-a" style="background-image:url('https://i.imgur.com/ObuprwI.jpg')"></div><div class="photo-thumb photo-b" style="background-image:url('https://i.imgur.com/ZPDxJit.jpeg')"></div><div class="photo-scan photo-a" style="background-image:url('https://i.imgur.com/ObuprwI.jpg')"></div><div class="photo-scan photo-b" style="background-image:url('https://i.imgur.com/ZPDxJit.jpeg')"></div><div class="project-copy"><p class="tag">Product Stills | 2015</p><h2>Bacardi</h2><p class="client">Houdini | Mantra | Nuke</p></div></article>
+          <article class="project reveal"><button class="play small" data-video="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" aria-label="Play How We Move film"><span>▶</span></button><div class="scene scene-three"><i></i><b></b><strong></strong></div><div class="project-copy"><p class="tag">Brand film / 2024</p><h2>How We Move</h2><p class="client">On Running</p></div></article>
+          <article class="project wide reveal"><button class="play small" data-video="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" aria-label="Play Quiet Noise film"><span>▶</span></button><div class="scene scene-four"><i></i><b></b><strong></strong></div><div class="project-copy"><p class="tag">Music / 2023</p><h2>Quiet Noise</h2><p class="client">Mela</p></div></article>
+        </div>
+      </section>
+
+      <section id="about" class="statement"><p class="eyebrow">02 / Practice</p><h2>Bold ideas deserve <em>beautiful friction.</em></h2><p class="statement-note">From first frame to final grade, I lead small, nimble teams to make work that feels precise, tactile and alive.</p></section>
+      <section class="numbers"><div><b>12</b><span>years making<br />moving images</span></div><div><b>31</b><span>cities filmed<br />across</span></div><div><b>9</b><span>creative partners<br />on speed dial</span></div></section>
+      <section id="contact" class="contact"><p class="eyebrow">03 / Start a conversation</p><h2>Have a story<br />worth <em>moving?</em></h2><a href="mailto:hello@alexmercer.studio">hello@alexmercer.studio <span>↗</span></a><footer><span>© 2025 Alex Mercer</span><span>Available for select projects</span><span>Instagram &nbsp; Vimeo &nbsp; LinkedIn</span></footer></section>
+    </main>
+    <audio id="project-audio" preload="none"></audio>
+    <dialog id="player"><button class="close" aria-label="Close player">×</button><video controls playsinline></video></dialog>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
