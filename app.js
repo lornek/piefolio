@@ -25,9 +25,18 @@ function setGlobalMuted(muted) {
 
 globalMuteButton.addEventListener('click', () => setGlobalMuted(!globalMuted));
 
-function loadVideo(video, source) {
+function loadVideo(video, source, usedFallback = false) {
+  const fallbackToAdaptive = () => {
+    const fallback = new URL(source);
+    fallback.searchParams.delete('min_resolution');
+    if (!usedFallback && fallback.href !== source) {
+      loadVideo(video, fallback.href, true);
+      video.play().catch(() => {});
+    }
+  };
   if (video.hlsInstance) video.hlsInstance.destroy();
   if (!new URL(source).pathname.endsWith('.m3u8') || video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.onerror = fallbackToAdaptive;
     video.src = source;
     return;
   }
@@ -35,6 +44,9 @@ function loadVideo(video, source) {
     video.hlsInstance = new window.Hls();
     video.hlsInstance.loadSource(source);
     video.hlsInstance.attachMedia(video);
+    video.hlsInstance.on(window.Hls.Events.ERROR, (_, data) => {
+      if (data.fatal) fallbackToAdaptive();
+    });
   }
 }
 
