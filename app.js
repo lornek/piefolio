@@ -88,7 +88,7 @@ document.querySelectorAll('.play').forEach((button) => {
     const playbackIds = button.dataset.playbackIds?.split(',') || [];
     const audioPlaybackId = button.dataset.audioPlaybackId;
     const sources = playbackIds.length
-      ? playbackIds.map((id) => `https://stream.mux.com/${id}.m3u8?min_resolution=1080p`)
+      ? playbackIds.map((id) => `https://stream.mux.com/${id}.m3u8`)
       : [button.dataset.video];
     const existingVideo = project.querySelector('.in-place-video');
     if (existingVideo) {
