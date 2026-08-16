@@ -35,7 +35,8 @@ function loadVideo(video, source, usedFallback = false) {
     }
   };
   if (video.hlsInstance) video.hlsInstance.destroy();
-  if (!new URL(source).pathname.endsWith('.m3u8') || video.canPlayType('application/vnd.apple.mpegurl')) {
+  const isHlsSource = new URL(source).pathname.endsWith('.m3u8');
+  if (!isHlsSource) {
     video.onerror = fallbackToAdaptive;
     video.src = source;
     return;
@@ -47,7 +48,10 @@ function loadVideo(video, source, usedFallback = false) {
     video.hlsInstance.on(window.Hls.Events.ERROR, (_, data) => {
       if (data.fatal) fallbackToAdaptive();
     });
+    return;
   }
+  video.onerror = fallbackToAdaptive;
+  video.src = source;
 }
 
 function playPlaylist(video, sources, startAt = 0) {
