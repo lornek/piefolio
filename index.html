@@ -24,19 +24,22 @@
       .video-mute{position:absolute;z-index:5;top:101px;right:25px;width:52px;height:52px;border:1px solid #ffffff70;border-radius:50%;background:#05070aa3;color:#fff;backdrop-filter:blur(8px);font-size:17px;cursor:pointer;transition:.25s}.play.small~.video-mute{top:87px}.video-mute:hover{background:var(--acid);border-color:var(--acid)}
       .global-mute{border:1px solid #ffffff55;border-radius:999px;background:#05070a66;color:inherit;padding:8px 12px;font:500 10px 'DM Mono';letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.global-mute:hover{border-color:var(--acid);color:var(--acid)}
       .nav-actions{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+      .nav{align-items:flex-start;padding-top:25px}
+      .hero .site-name{margin:0;font:500 33px 'DM Mono';line-height:normal;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+      .hero-identity{display:flex;flex-direction:column;gap:6px}.hero-identity .eyebrow{margin:0}
       .expand{position:absolute;z-index:5;right:25px;bottom:25px;width:52px;height:52px;border:1px solid #ffffff70;border-radius:50%;background:#05070aa3;color:#fff;backdrop-filter:blur(8px);font-size:20px;cursor:pointer;transition:.25s}
       .expand:hover{background:var(--acid);border-color:var(--acid)}
       #player{width:100vw;height:100vh;max-height:none;border:0;background:#000}
       #player video{width:100vw;height:100vh;max-height:none;object-fit:contain}
       #player .close{top:22px;right:24px;width:44px;height:44px;background:#07090dbb;font-size:30px}
-      @media(max-width:650px){.hero{padding:92px 6vw 22px}.work{padding-top:36px}.project-grid .photo-album{grid-column:auto;height:112vw}.video-mute{top:93px;right:17px;width:46px;height:46px}.play.small~.video-mute{top:79px}.expand{right:17px;bottom:17px;width:46px;height:46px}.global-mute{display:none}}
+      @media(max-width:650px){.nav{padding-top:18px}.hero{padding:92px 6vw 22px}.work{padding-top:36px}.project-grid .photo-album{grid-column:auto;height:112vw}.video-mute{top:93px;right:17px;width:46px;height:46px}.play.small~.video-mute{top:79px}.expand{right:17px;bottom:17px;width:46px;height:46px}.global-mute{display:none}.hero .site-name{font-size:8.7vw;white-space:normal}.hero-identity{gap:6px}}
     </style>
   </head>
   <body>
-    <header class="nav"><a class="brand" href="#top">AM<span>®</span></a><div class="nav-actions"><nav><a href="#work">Selected work</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="global-mute" id="global-mute" type="button" aria-pressed="false">Sound on</button></div><button class="menu" aria-label="Open navigation">Menu</button></header>
+    <header class="nav"><a class="brand" href="#top">LK<span>®</span></a><div class="nav-actions"><nav><a href="#work">Selected work</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="global-mute" id="global-mute" type="button" aria-pressed="false">Sound on</button></div><button class="menu" aria-label="Open navigation">Menu</button></header>
     <main id="top">
       <section class="hero">
-        <div class="eyebrow">VFX Supervisor &amp; Developer <span>•</span> Toronto / Everywhere</div>
+        <div class="hero-identity"><h1 class="site-name">Lorne Kwechansky</h1><div class="eyebrow">VFX Supervisor &amp; Developer <span>•</span> Toronto / Everywhere</div></div>
       </section>
 
       <section id="work" class="work">
